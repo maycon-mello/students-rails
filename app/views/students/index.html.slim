@@ -1,0 +1,28 @@
+
+- if notice
+  div.alert.alert-success = notice
+
+table.table
+  thead
+    tr
+      th = I18n.t 'labels.students.name'
+      th = I18n.t 'labels.students.register_number'
+      th = I18n.t 'labels.students.status'
+      th
+      th
+
+  tbody
+    - @students.each do |student|
+      tr
+        td = student.name
+        td = student.register_number
+        td = student.status_humanize
+        td = link_to "#{I18n.t 'form_action.edit'}", edit_student_path(student)
+        td = link_to "#{I18n.t 'form_action.remove'}", student, data: { confirm: "#{I18n.t 'form_action.ask'}" }, method: :delete
+
+br
+
+a#NewStudent class="btn btn-default" href= new_student_path
+  span class="glyphicon glyphicon-plus" aria-hidden="true"
+  | &nbsp;
+  = I18n.t 'actions.students.new'

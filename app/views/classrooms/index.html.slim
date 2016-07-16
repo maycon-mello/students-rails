@@ -1,0 +1,32 @@
+
+- if notice
+  div.alert.alert-success = notice
+
+table.table
+  thead
+    tr
+      th = I18n.t 'labels.classrooms.course'
+      th = I18n.t 'labels.classrooms.course'
+      th = I18n.t 'labels.classrooms.entry_at'
+      th
+      th
+
+  tbody
+    - @classrooms.each do |classroom|
+      tr
+        td = classroom.student.name
+        td = classroom.course.name
+        td
+          - if classroom.entry_at
+            = I18n.l classroom.entry_at, :format => :short
+          - else
+            = classroom.entry_at
+        td = link_to "#{I18n.t 'form_action.edit'}", edit_classroom_path(classroom)
+        td = link_to "#{I18n.t 'form_action.remove'}", classroom, data: { confirm: "#{I18n.t 'form_action.ask'}" }, method: :delete
+
+br
+
+a class="btn btn-default" href= new_classroom_path
+  span class="glyphicon glyphicon-plus" aria-hidden="true"
+  | &nbsp;
+  = I18n.t 'actions.classrooms.new'

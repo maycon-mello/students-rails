@@ -1,0 +1,22 @@
+pt-BR:
+  controllers:
+    courses:
+      create:
+        success: 'Curso criado com sucesso.'
+        error: 'Erro ao criar curso'
+      edit:
+        success: 'Curso atualizado com sucesso.'
+        error: 'Erro ao atualizar matrícula'
+      remove:
+        success: 'Curso removido com sucesso.'
+        error: 'Erro ao criar matrícula'
+
+  labels:
+    courses:
+      name: 'Nome'
+      description: 'Descrição'
+      status: 'Status'
+
+  actions:
+    courses:
+      new: 'Novo curso'

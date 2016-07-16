@@ -1,0 +1,22 @@
+= form_for @student do |f|
+  - if @student.errors.any?
+    #error_explanation
+      h2 = error_message
+      ul
+        - @student.errors.full_messages.each do |message|
+          li = message
+
+  .field.form-group
+    label Nome
+    = f.text_field :name, class: 'form-control'
+
+  .field.form-group
+    label Número de registro
+    = f.text_field :register_number, class: 'form-control'
+
+  .field.form-group
+    label Status
+    = f.select :status, StudentStatus.to_a, {}, {:class => 'form-control'}
+
+  .actions
+    == form_actions(students_path)

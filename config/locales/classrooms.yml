@@ -1,0 +1,21 @@
+pt-BR:
+  controllers:
+    classrooms:
+      create:
+        success: 'Matrícula criada com sucesso.'
+        error: 'Erro ao criar matrícula'
+      edit:
+        success: 'Matrícula atualizada com sucesso.'
+        error: 'Erro ao atualizar matrícula'
+      remove:
+        success: 'Matrícula removida com sucesso.'
+        error: 'Erro ao remover matrícula'
+  labels:
+    classrooms:
+      student: 'Aluno'
+      course: 'Curso'
+      entry_at: 'Vinculado em'
+
+  actions:
+    classrooms:
+      new: 'Nova matrícula'

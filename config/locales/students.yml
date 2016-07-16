@@ -1,0 +1,22 @@
+pt-BR:
+  controllers:
+    students:
+      create:
+        success: 'Aluno criado com sucesso.'
+        error: 'Erro ao criar aluno'
+      edit:
+        success: 'Aluno atualizado com sucesso.'
+        error: 'Erro ao editar aluno'
+      remove:
+        success: 'Aluno removido com sucesso.'
+        error: 'Erro ao remover aluno'
+
+  labels:
+    students:
+      name: 'Nome'
+      register_number: 'Número de registro'
+      status: 'Status'
+
+  actions:
+    students:
+      new: 'Novo aluno'

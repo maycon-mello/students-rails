@@ -1,0 +1,18 @@
+= form_for @classroom do |f|
+  - if @classroom.errors.any?
+    #error_explanation
+      h2 = error_message
+      ul
+        - @classroom.errors.full_messages.each do |message|
+          li = message
+
+  .field.form-group
+    label = I18n.t 'labels.classrooms.student'
+    = f.select :student_id, options_for_select(Student.all.map{|s|[s.name, s.id]}), {}, {class: 'form-control'}
+
+  .field.form-group
+    label = I18n.t 'labels.classrooms.course'
+    = f.select :course_id, options_for_select(Course.all.map{|s|[s.name, s.id]}), {}, {class: 'form-control'}
+
+  .actions
+    == form_actions(classrooms_path)
